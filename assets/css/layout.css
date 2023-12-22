@@ -1,18 +1,14 @@
 * {
-    /*background: black;*/
-    /*color: gray;*/
-}
-
-nav a {
-    text-decoration: none;
+    margin: 0;
+    padding: 0;
 }
 
 /*Titel*/
 #title {
-
+    text-align: center;
 }
 
-/*Navigation */
+/*Navigation*/
 #navigation {
     display: flex;
     flex-direction: row;
@@ -20,8 +16,24 @@ nav a {
 }
 
 .navList {
-    height: 50px;
     line-height: 50px;
     width: 200px;
+
     text-align: center;
+
+    margin: 0 10px 0 10px;
+}
+
+/*Footer*/
+footer {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    position: marker;
+    bottom: 0;
 }
