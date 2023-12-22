@@ -1,0 +1,27 @@
+* {
+    /*background: black;*/
+    /*color: gray;*/
+}
+
+nav a {
+    text-decoration: none;
+}
+
+/*Titel*/
+#title {
+
+}
+
+/*Navigation */
+#navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navList {
+    height: 50px;
+    line-height: 50px;
+    width: 200px;
+    text-align: center;
+}
