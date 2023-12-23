@@ -130,6 +130,7 @@ async function loadLang() {
         instaLink.textContent = "- Mein Insta -"
     } else {
         picture = "en.svg"
+
         about.textContent = "About Me"
         home.textContent = "Home"
         projects.textContent = "Projects"
