@@ -50,7 +50,6 @@ async function projects() {
             for (let i = 0; i < data.length; i++) {
                 repoInfos.push(new Array([data[i]["name"], data[i]["created_at"], data[i]["language"], data[i]["description"], data[i]["html_url"]]))
             }
-            console.log(repoInfos)
         })
         .catch(error => {
             console.error('Error fetching data:', error);
@@ -59,7 +58,6 @@ async function projects() {
         let name = repoInfos[i][0][0]
         let description = repoInfos[i][0][3]
         let language = repoInfos[i][0][2]
-        console.log(repoInfos[i][0][1].split('T')[0])
         let date = repoInfos[i][0][1].split('T')[0].split("-")
         let url = repoInfos[i][0][4]
         el.innerHTML += "<div class=\"repo\">\n" +
