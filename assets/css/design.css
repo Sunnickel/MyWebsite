@@ -14,7 +14,7 @@
     --background: #d1f6f2;
 }
 
-* {
+body, button {
     background: var(--background);
     font-family: "Source Code Pro", fantasy;
 }

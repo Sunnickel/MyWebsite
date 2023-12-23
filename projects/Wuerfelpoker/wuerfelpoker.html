@@ -5,181 +5,21 @@
     <title>Würfelpoker - Alexander Reiter</title>
     <link href="../../assets/css/design.css" rel="stylesheet">
     <link href="../../assets/css/layout.css" rel="stylesheet">
+    <script src="../../assets/javascript/standard.js"></script>
+
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <script>
-        const pictures = [6, 6, 6, 6, 6];
-        const doNotChange = [0, 0, 0, 0, 0]
-        let trys = 0
-        window.addEventListener("load", nextPlayer)
-        function rollDice() {
-            trys++
-            const roll_button = document.getElementById("roll");
-            roll_button.value = "   roll dice  " + trys + " ";
-
-            if (trys === 3) {
-                roll_button.setAttribute("disabled", "");
-            }
-
-            savedDice()
-            for (let i = 0; i < 5; i++) {
-                if (doNotChange[i] === 1) {
-                    continue
-                }
-                pictures[i] = getRandom(1, 6)
-            }
-            setPictures(false)
-        }
-        function getPicture(picture) {
-            var img = pictures[picture]
-            var imgName
-            switch (img) {
-                case 1:
-                    imgName = "eins"
-                    break
-                case 2:
-                    imgName = "zwei"
-                    break
-                case 3:
-                    imgName = "drei"
-                    break
-                case 4:
-                    imgName = "vier"
-                    break
-                case 5:
-                    imgName = "fuenf"
-                    break
-                case 6:
-                    imgName = "sechs"
-                    break
-            }
-            return "./Bilder/" + imgName + ".jpg"
-        }
-        function savedDice() {
-            for (let i = 0; i < 5; i++) {
-                var checkbox = document.getElementById('dice' + (i + 1) + "checkbox");
-                checkbox.removeAttribute("disabled");
-                var isChecked = checkbox.checked
-                if (isChecked === true) {
-                    doNotChange[i] = 1
-                }
-            }
-        }
-        function getRandom(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        function setPictures(reset = false) {
-            for (let i = 0; i < 5; i++) {
-                const image = document.getElementById('dice' + (i + 1));
-
-                if (reset) {
-                    doNotChange[i] = 0
-                    pictures[i] = 6
-                    transFromRandom(image)
-                }
-                if (doNotChange[i] === 1) {
-                    continue
-                }
-
-                if (!reset) {
-                    transFromRandom(image, true)
-                }
-
-                image.src = getPicture(i)
-            }
-        }
-        function nextPlayer() {
-            for (let i = 0; i < 5; i++) {
-                let checkbox = document.getElementById('dice' + (i + 1) + "checkbox");
-                checkbox.checked = false
-                checkbox.setAttribute("disabled", "");
-            }
-            trys = 0
-            setPictures(true)
-
-            const roll_button = document.getElementById("roll");
-            roll_button.value = "   roll dice  ";
-            roll_button.removeAttribute("disabled");
-        }
-        function transFromRandom(object, doSetVars = false) {
-            let rotation = 0
-            let margin = 10
-            if (doSetVars) {
-                rotation = getRandom(1, 360)
-                margin = getRandom(1, 350)
-            }
-            object.style.transform = "rotate(" + rotation + "deg)";
-            object.style.marginTop = margin + "px";
-        }
-    </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            background-size: 100%;
-        }
-        body {
-            background: url("Bilder/pokerfeld.jpg") center;
-        }
-        #site {
-            display: grid;
-            grid-template-columns: 5% 90% 5%;
-            grid-template-rows: repeat(4, 250px);
-        }
-
-        /* Dices */
-        #playField {
-            margin-top: 10px;
-            height: 500px;
-            grid-column: 2 / 3 ;
-            grid-row: 2 / 3 ;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-        .dices{
-            margin-top: 45px;
-            border-radius: 30px;
-        }
-
-        /* Controls */
-        #chooseDices {
-            margin-top: 10px;
-            grid-column: 2 / 3 ;
-            grid-row: 4 / 5 ;
-            display: grid;
-            grid-template-columns: 30% 40% 30%;
-        }
-        #checkboxes {
-            height: 150px;
-            margin-top: 45px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            grid-column: 2 / 3;
-        }
-        #buttons {
-            display: flex;
-            margin: 0 10px 0 10px;
-            justify-content: center;
-            grid-column: 2 / 3;
-        }
-        #roll {
-            margin: 5px;
-        }
-        #next {
-            margin: 5px;
-        }
-    </style>
 </head>
 <body>
 <div id="site">
     <div id="playField">
-        <img alt="dice" class="dices" id="dice1" src="Bilder/sechs.jpg" height="150">
-        <img alt="dice" class="dices" id="dice2" src="Bilder/sechs.jpg" height="150">
-        <img alt="dice" class="dices" id="dice3" src="Bilder/sechs.jpg" height="150">
-        <img alt="dice" class="dices" id="dice4" src="Bilder/sechs.jpg" height="150">
-        <img alt="dice" class="dices" id="dice5" src="Bilder/sechs.jpg" height="150">
+        <img alt="dice" class="dices" height="150" id="dice1" src="Bilder/sechs.jpg">
+        <img alt="dice" class="dices" height="150" id="dice2" src="Bilder/sechs.jpg">
+        <img alt="dice" class="dices" height="150" id="dice3" src="Bilder/sechs.jpg">
+        <img alt="dice" class="dices" height="150" id="dice4" src="Bilder/sechs.jpg">
+        <img alt="dice" class="dices" height="150" id="dice5" src="Bilder/sechs.jpg">
     </div>
     <form action="" id="chooseDices" method="post">
         <div id="checkboxes">
@@ -190,18 +30,21 @@
             <label for="dice5checkbox"><input id="dice5checkbox" name="dice5" type="checkbox"></label>
         </div>
         <div id="buttons">
-            <label><input id="roll" name="roll" type="button" value="   roll dice   " onclick="rollDice()"></label>
-            <label><input id="next" name="next" type="button" value="   next player   " onclick="nextPlayer()"></label>
+            <label><input class="buttons" id="roll" name="roll" onclick="rollDice()" type="button"
+                          value="   roll dice   "></label>
+            <label><input class="buttons" id="next" name="next" onclick="nextPlayer()" type="button"
+                          value="   next player   "></label>
         </div>
     </form>
 </div>
 <div id="footer">
-        <a href="../../projects.html">- Back -</a>
-        <a href="https://github.com/Sunnickel" id="githubLink">- My GitHub -</a>
-        <a href="https://twitch.com/Sunnickel" id="twitchLink">- My Twitch -</a>
-        <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander Reiter,  </a>
-        <a href="https://www.tiktok.com/@sunnickel" id="tiktokLink">- My TikTok -</a>
-        <a href="https://www.instagram.com/sunnickel/" id="instaLink">- My Insta -</a>
-    </div>
+    <a href="../../projects.html">- Back -</a>
+    <a href="https://github.com/Sunnickel" id="githubLink">- My GitHub -</a>
+    <a href="https://twitch.com/Sunnickel" id="twitchLink">- My Twitch -</a>
+    <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander
+        Reiter, </a>
+    <a href="https://www.tiktok.com/@sunnickel" id="tiktokLink">- My TikTok -</a>
+    <a href="https://www.instagram.com/sunnickel/" id="instaLink">- My Insta -</a>
+</div>
 </body>
 </html>
