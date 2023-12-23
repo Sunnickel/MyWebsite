@@ -110,6 +110,7 @@ async function loadLang() {
     let home = document.getElementById("homeButton")
     let projects = document.getElementById("projectsButton")
 
+    let dicspoker
 
     let githubLink = document.getElementById("githubLink")
     let twitchLink = document.getElementById("twitchLink")

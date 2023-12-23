@@ -56,6 +56,10 @@ body {
     flex-direction: column;
 }
 
+#ownProjects {
+  grid-column: 2 / 3;
+}
+
 #repos {
     grid-column: 2 / 3;
 }
