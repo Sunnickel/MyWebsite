@@ -1,5 +1,7 @@
 window.addEventListener("load", getFile)
 
+let page = window.location.pathname.split("/").pop();
+
 async function getFile() {
     copyrightYear()
 
@@ -9,8 +11,6 @@ async function getFile() {
 
     await loadLang()
 
-    let file = window.location.pathname
-    let page = file.split("/").pop();
     switch (page.split(".")[0]) {
         case "index":
             await twitchSize()
@@ -97,7 +97,6 @@ async function changeLanguage() {
     await loadLang()
 }
 
-
 async function loadLang() {
     let lang = localStorage.getItem("lang")
 
@@ -107,9 +106,6 @@ async function loadLang() {
     let about = document.getElementById("aboutButton")
     let home = document.getElementById("homeButton")
     let projects = document.getElementById("projectsButton")
-
-    let dicepoker_h3 = document.getElementById("dicepoker-h3")
-    let dicepoker_desc = document.getElementById("dicepoker-desc")
 
     let githubLink = document.getElementById("githubLink")
     let twitchLink = document.getElementById("twitchLink")
@@ -123,13 +119,24 @@ async function loadLang() {
         home.textContent = "Startseite"
         projects.textContent = "Projekte"
 
-        dicepoker_h3.textContent = "Würfelpoker"
-        dicepoker_desc.textContent = "Ein einfaches Würfelpoker Spiel (Noch nicht fertig)"
-
         githubLink.textContent = "- Mein Github -"
         twitchLink.textContent = "- Mein Twitch -"
         tiktokLink.textContent = "- Mein TikTok -"
         instaLink.textContent = "- Mein Insta -"
+
+        switch (page.split(".")[0]) {
+        case "index":
+            break
+        case "about":
+            break
+        case "projects":
+            let dicepoker_h3 = document.getElementById("dicepoker-h3")
+            let dicepoker_desc = document.getElementById("dicepoker-desc")
+
+            dicepoker_h3.textContent = "Würfelpoker"
+            dicepoker_desc.textContent = "Ein einfaches Würfelpoker Spiel (Noch nicht fertig)"
+            break
+    }
     } else {
         picture = "en.svg"
 
@@ -137,14 +144,28 @@ async function loadLang() {
         home.textContent = "Home"
         projects.textContent = "Projects"
 
-        dicepoker_h3.textContent = "Dice Poker"
-        dicepoker_desc.textContent = "A game of dice poker (Not finished yet)"
-
         githubLink.textContent = "- My Github -"
         twitchLink.textContent = "- My Twitch -"
         tiktokLink.textContent = "- My TikTok -"
         instaLink.textContent = "- My Insta -"
+
+        switch (page.split(".")[0]) {
+        case "index":
+            break
+        case "about":
+            break
+        case "projects":
+            let dicepoker_h3 = document.getElementById("dicepoker-h3")
+            let dicepoker_desc = document.getElementById("dicepoker-desc")
+
+            dicepoker_h3.textContent = "Dice Poker"
+            dicepoker_desc.textContent = "A game of dice poker (Not finished yet)"
+            break
     }
+    }
+
+
+
 
     img.src = "assets/pictures/" + picture
 }
