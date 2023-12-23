@@ -93,3 +93,9 @@ body {
     position: fixed;
     bottom: 0;
 }
+
+.changer {
+    margin: 0 10px 0 10px;
+    height: 40px;
+    line-height: 50px;
+}

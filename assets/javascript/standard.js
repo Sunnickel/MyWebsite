@@ -5,6 +5,7 @@ async function getFile() {
 
     await document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
     await document.documentElement.setAttribute('lang', localStorage.getItem("lang"));
+    document.getElementById("changeTheme").src = "assets/pictures/" +  localStorage.getItem("theme") + ".svg"
 
     await loadLang()
 
@@ -75,12 +76,12 @@ function changeTheme() {
 
     if (localStorage.getItem("theme") === "light") {
         document.documentElement.setAttribute('data-theme', 'dark');
-        picture =  "moon.svg"
+        picture =  "dark.svg"
         localStorage.setItem("theme", "dark")
     }
     else {
         document.documentElement.setAttribute('data-theme', 'light');
-        picture =  "sun.svg"
+        picture =  "light.svg"
         localStorage.setItem("theme", "light")
     }
 
@@ -109,16 +110,34 @@ async function loadLang() {
     let home = document.getElementById("homeButton")
     let projects = document.getElementById("projectsButton")
 
+
+    let githubLink = document.getElementById("githubLink")
+    let twitchLink = document.getElementById("twitchLink")
+    let tiktokLink = document.getElementById("tiktokLink")
+    let instaLink = document.getElementById("instaLink")
+
     if (lang === "de") {
-        picture = "german.svg"
+        picture = "de.svg"
+
         about.textContent = "Über Mich"
         home.textContent = "Startseite"
         projects.textContent = "Projekte"
+
+
+        githubLink.textContent = "- Mein Github -"
+        twitchLink.textContent = "- Mein Twitch -"
+        tiktokLink.textContent = "- Mein TikTok -"
+        instaLink.textContent = "- Mein Insta -"
     } else {
-        picture = "english.svg"
+        picture = "en.svg"
         about.textContent = "About Me"
         home.textContent = "Home"
         projects.textContent = "Projects"
+
+        githubLink.textContent = "- My Github -"
+        twitchLink.textContent = "- My Twitch -"
+        tiktokLink.textContent = "- My TikTok -"
+        instaLink.textContent = "- My Insta -"
     }
 
     img.src = "assets/pictures/" + picture
