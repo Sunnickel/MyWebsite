@@ -1,52 +1,57 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Projects - Alexander Reiter</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/pictures/favicon.ico">
-    <link rel="icon" type="image/png" href="assets/pictures/favicon.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/pictures/favicon.png" sizes="96x96">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/pictures/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/pictures/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="assets/pictures/favicon.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="assets/pictures/favicon.png" rel="icon" sizes="96x96" type="image/png">
+    <link href="assets/pictures/favicon.png" rel="apple-touch-icon" sizes="180x180">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="assets/css/layout.css" rel="stylesheet">
+    <link href="assets/css/layout-smartphone.css" rel="stylesheet">
     <link href="assets/css/design.css" rel="stylesheet">
-    <script src="assets/javascript/standard.js" defer></script>
+    <script defer src="assets/javascript/standard.js"></script>
 </head>
 
 <body>
-    <header>
-        <h1 id="title"> Alexander Reiter </h1>
-    </header>
-    <nav>
-        <div id="navigation">
-            <button onclick="location.href = 'about.html';" class="navList" id="aboutButton">About Me</button>
-            <button onclick="location.href = 'index.html';" class="navList" id="homeButton">Home</button>
-            <button onclick="location.href = 'projects.html';" class="navList" disabled id="projectsButton">Projects</button>
+<header>
+    <h1 id="title"> Alexander Reiter </h1>
+</header>
+<nav>
+    <div id="navigation">
+        <button class="navList" id="aboutButton" onclick="location.href = 'about.html';">About Me</button>
+        <button class="navList" id="homeButton" onclick="location.href = 'index.html';">Home</button>
+        <button class="navList" disabled id="projectsButton" onclick="location.href = 'projects.html';">Projects
+        </button>
+    </div>
+</nav>
+<div id="grid-wrapper">
+    <div id="ownProjects">
+        <div class=repo>
+            <h3 id="dicepoker-h3"> Dice Poker </h3>
+            <div id="dicepoker-desc"> A game of dice poker (Not finished yet)</div>
+            <div> HTML | 15.12.2023 <a href="../projects/Wuerfelpoker/wuerfelpoker.html">Play</a></div>
         </div>
-    </nav>
-    <div id="grid-wrapper">
-        <div id="ownProjects">
-            <div class=repo>
-                <h3 id="dicepoker-h3"> Dice Poker </h3>
-                <div id="dicepoker-desc"> A game of dice poker (Not finished yet)</div>
-                <div> HTML |  15.12.2023 <a href="../projects/Wuerfelpoker/wuerfelpoker.html">Play</a></div>
-            </div>
-        </div>
-        <div id="repos">
+    </div>
+    <div id="repos">
 
-        </div>
     </div>
-    <div id="footer">
-        <div></div>
-        <a href="https://github.com/Sunnickel" id="githubLink">- My GitHub -</a>
-        <a href="https://twitch.com/Sunnickel" id="twitchLink">- My Twitch -</a>
-        <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander Reiter,  </a>
-        <a href="https://www.tiktok.com/@sunnickel" id="tiktokLink">- My TikTok -</a>
-        <a href="https://www.instagram.com/sunnickel/" id="instaLink">- My Insta -</a>
-        <div>
-            <img src="assets/pictures/dark.svg" alt="Change Theme" onclick="changeTheme()" height="40px" width="40px" id="changeTheme" class="changer">
-            <img src="assets/pictures/en.svg" alt="Change Theme" onclick="changeLanguage()" height="40px" width="40px" id="changeLanguage" class="changer">
-        </div>
+</div>
+<div id="footer">
+    <div>
+        <img alt="Change Theme" class="changer" height="40px" id="changeTheme" onclick="changeTheme()"
+             src="assets/pictures/dark.svg" width="40px">
+        <img alt="Change Theme" class="changer" height="40px" id="changeLanguage" onclick="changeLanguage()"
+             src="assets/pictures/en.svg" width="40px">
     </div>
+    <a href="https://github.com/Sunnickel" id="githubLink">- My GitHub -</a>
+    <a href="https://twitch.com/Sunnickel" id="twitchLink">- My Twitch -</a>
+    <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander
+        Reiter, </a>
+    <a href="https://www.tiktok.com/@sunnickel" id="tiktokLink">- My TikTok -</a>
+    <a href="https://www.instagram.com/sunnickel/" id="instaLink">- My Insta -</a>
+    <div></div>
+</div>
 </body>
 </html>

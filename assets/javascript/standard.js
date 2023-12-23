@@ -7,7 +7,7 @@ async function getFile() {
 
     await document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
     await document.documentElement.setAttribute('lang', localStorage.getItem("lang"));
-    document.getElementById("changeTheme").src = "assets/pictures/" +  localStorage.getItem("theme") + ".svg"
+    document.getElementById("changeTheme").src = "assets/pictures/" + localStorage.getItem("theme") + ".svg"
 
     await loadLang()
 
@@ -60,11 +60,7 @@ async function projects() {
         let language = repoInfos[i][0][2]
         let date = repoInfos[i][0][1].split('T')[0].split("-")
         let url = repoInfos[i][0][4]
-        el.innerHTML += "<div class=\"repo\">\n" +
-            "                <h3>" + name + "</h3>\n" +
-            "                <div>" + description + "\n </div>" +
-            "                <div>" + language + " | " + date[2] + "." + date[1] + "." + date[0] + "<a href='" + url + "'>GitHub</a></div>\n" +
-            "            </div>"
+        el.innerHTML += "<div class=\"repo\">\n" + "                <h3>" + name + "</h3>\n" + "                <div>" + description + "\n </div>" + "                <div>" + language + " | " + date[2] + "." + date[1] + "." + date[0] + "<a href='" + url + "'>GitHub</a></div>\n" + "            </div>"
     }
 }
 
@@ -74,12 +70,11 @@ function changeTheme() {
 
     if (localStorage.getItem("theme") === "light") {
         document.documentElement.setAttribute('data-theme', 'dark');
-        picture =  "dark.svg"
+        picture = "dark.svg"
         localStorage.setItem("theme", "dark")
-    }
-    else {
+    } else {
         document.documentElement.setAttribute('data-theme', 'light');
-        picture =  "light.svg"
+        picture = "light.svg"
         localStorage.setItem("theme", "light")
     }
 
@@ -114,57 +109,61 @@ async function loadLang() {
 
     if (lang === "de") {
         picture = "de.svg"
-
         about.textContent = "Über Mich"
         home.textContent = "Startseite"
         projects.textContent = "Projekte"
-
         githubLink.textContent = "- Mein Github -"
         twitchLink.textContent = "- Mein Twitch -"
         tiktokLink.textContent = "- Mein TikTok -"
         instaLink.textContent = "- Mein Insta -"
 
         switch (page.split(".")[0]) {
-        case "index":
-            break
-        case "about":
-            break
-        case "projects":
-            let dicepoker_h3 = document.getElementById("dicepoker-h3")
-            let dicepoker_desc = document.getElementById("dicepoker-desc")
-
-            dicepoker_h3.textContent = "Würfelpoker"
-            dicepoker_desc.textContent = "Ein einfaches Würfelpoker Spiel (Noch nicht fertig)"
-            break
-    }
+            case "index":
+                let twitchDesc = document.getElementById("twitch-desc")
+                twitchDesc.textContent = "Bitte komm ein andern Mal wieder. Ich bin derzeit Offline!"
+                break
+            case "about":
+                let aboutText = document.getElementById("aboutText")
+                aboutText.textContent = "Ich bin ein 15 jähriger Schüler names Alexander (Sunnickel), der in der Schule " +
+                    "ein paar Programmiersprachen lernt und in seiner Freizeit oft programmiert." +
+                    "Hauptsächlich so Projekte wie diese Website. Die Sprachen die ich lerne sind Javascript, Python und Java." +
+                    "Ich habe bisher aber auch schon Shell Code, PowerShell und Batch benützt"
+                break
+            case "projects":
+                let dicepoker_h3 = document.getElementById("dicepoker-h3")
+                let dicepoker_desc = document.getElementById("dicepoker-desc")
+                dicepoker_h3.textContent = "Würfelpoker"
+                dicepoker_desc.textContent = "Ein einfaches Würfelpoker Spiel (Noch nicht fertig)"
+                break
+        }
     } else {
         picture = "en.svg"
-
         about.textContent = "About Me"
         home.textContent = "Home"
         projects.textContent = "Projects"
-
         githubLink.textContent = "- My Github -"
         twitchLink.textContent = "- My Twitch -"
         tiktokLink.textContent = "- My TikTok -"
         instaLink.textContent = "- My Insta -"
-
         switch (page.split(".")[0]) {
-        case "index":
-            break
-        case "about":
-            break
-        case "projects":
-            let dicepoker_h3 = document.getElementById("dicepoker-h3")
-            let dicepoker_desc = document.getElementById("dicepoker-desc")
-
-            dicepoker_h3.textContent = "Dice Poker"
-            dicepoker_desc.textContent = "A game of dice poker (Not finished yet)"
-            break
+            case "index":
+                let twitchDesc = document.getElementById("twitch-desc")
+                twitchDesc.textContent = "Please come back another time. I am currently offline!"
+                break
+            case "about":
+                let aboutText = document.getElementById("aboutText")
+                aboutText.textContent = "I'm a 15 years old student named Alexander (Sunnickel), who learns a few programming languages in school and often programms in his free time.\n" +
+                    "                Mostly projects like this website. The languages I'm learning are Javascript, Python and Java. I also used shell code,\n" +
+                    "                powershell and batch before."
+                break
+            case "projects":
+                let dicepoker_h3 = document.getElementById("dicepoker-h3")
+                let dicepoker_desc = document.getElementById("dicepoker-desc")
+                dicepoker_h3.textContent = "Dice Poker"
+                dicepoker_desc.textContent = "A game of dice poker (Not finished yet)"
+                break
+        }
     }
-    }
-
-
 
 
     img.src = "assets/pictures/" + picture

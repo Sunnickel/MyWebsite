@@ -4,6 +4,8 @@
     --links: #F4E87C;
     --header: #C0DA74;
     --background: #000000;
+    --border-deactivated: 2px solid var(--disabled);
+    --border-activated: 2px solid var(--font);
 }
 
 [data-theme="light"] {
@@ -12,6 +14,8 @@
     --links: #E54F6D;
     --header: #171D1C;
     --background: #d1f6f2;
+    --border-deactivated: 2px solid var(--disabled);
+    --border-activated: 2px solid var(--font);
 }
 
 body, button {
@@ -30,7 +34,7 @@ header {
 /*Navigation*/
 .navList:hover:not([disabled]) {
     font-weight: bold;
-    border: 2px solid var(--font);
+    border: var(--border-activated);
 }
 
 .navList:disabled {
@@ -40,7 +44,7 @@ header {
 .navList {
     color: var(--font);
     font-weight: bold;
-    border: 2px solid var(--disabled);
+    border: var(--border-deactivated);
     border-radius: 15px;
 }
 
@@ -49,23 +53,36 @@ header {
     color: var(--font);
 }
 
+/*home*/
 #twitch-embed {
-    border: 2px solid var(--disabled);
+    border: var(--border-deactivated);
     border-radius: 15px;
 }
 
 .template-entry {
-    border: 2px solid var(--disabled);
+    border: var(--border-deactivated);
     border-radius: 15px;
 }
 
 .template-entry:hover {
-    border: 2px solid var(--font);
+    border: var(--border-activated);
 }
 
+/*about me*/
+#information {
+    border: var(--border-deactivated);
+    border-radius: 15px;
+}
+#information * {
+    margin: 5px;
+}
+
+
+
+/*projects*/
 .repo {
     color: var(--font);
-    border: 2px solid var(--disabled);
+    border: var(--border-deactivated);
     border-radius: 15px;
 }
 

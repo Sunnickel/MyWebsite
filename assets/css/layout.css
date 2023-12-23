@@ -10,9 +10,7 @@ header {
 }
 
 /*Navigation*/
-body {
 
-}
 #navigation {
     display: flex;
     flex-direction: row;
@@ -36,6 +34,7 @@ body {
     grid-column: 2 / 3;
 }
 
+/*home*/
 #twitch-embed {
     margin-bottom: 10px;
 }
@@ -56,6 +55,7 @@ body {
     flex-direction: column;
 }
 
+/*projects*/
 #repos, #ownProjects {
     grid-column: 2 / 3;
 }
@@ -79,7 +79,10 @@ body {
     justify-content: space-between;
 }
 
-
+/*about me*/
+#information {
+    display: flex;
+}
 
 /*Footer*/
 #footer {
@@ -97,3 +100,4 @@ body {
 .changer {
     margin: 0 10px 0 10px;
 }
+
