@@ -1,29 +1,28 @@
 window.addEventListener("load", getFile)
 
-function getFile() {
+async function getFile() {
     copyrightYear()
+
+    await document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
+    await document.documentElement.setAttribute('lang', 'de');
+
     let file = window.location.pathname
     let page = file.split("/").pop();
-    console.log(page)
     switch (page.split(".")[0]) {
         case "index":
-            twitchSize()
+            await twitchSize()
             break
         case "about":
             break
         case "projects":
-            projects()
+            await projects()
             break
     }
 }
 
-
 function twitchSize() {
     const height = document.documentElement.clientHeight
-
     let twitchEmbed = document.getElementById("twitch-embed")
-
-
     twitchEmbed.height = height / 3.0477158005016032254992221975301
 }
 
@@ -65,5 +64,60 @@ async function projects() {
             "                <div>" + description + "\n </div>" +
             "                <div>" + language + " | " + date[2] + "." + date[1] + "." + date[0] + "<a href='" + url + "'>GitHub</a></div>\n" +
             "            </div>"
+    }
+}
+
+function changeTheme() {
+    let img = document.getElementById("changeTheme")
+    let picture = ""
+
+    if (localStorage.getItem("theme") === "light") {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        picture =  "moon.svg"
+        localStorage.setItem("theme", "dark")
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        picture =  "sun.svg"
+        localStorage.setItem("theme", "light")
+    }
+
+    img.src = "assets/pictures/" + picture
+}
+
+async function changeLanguage() {
+    let img = document.getElementById("changeLanguage")
+    let picture = "";
+
+    if (localStorage.getItem("lang") === "de") {
+        picture = "english.svg"
+        document.documentElement.setAttribute('lang', 'en');
+        localStorage.setItem("lang", "en")
+    } else {
+        picture = "german.svg"
+        document.documentElement.setAttribute('lang', 'de');
+        localStorage.setItem("lang", "de")
+    }
+
+    await loadLang()
+    img.src = "assets/pictures/" + picture
+}
+
+
+async function loadLang() {
+    let lang = localStorage.getItem("lang")
+
+    let about = document.getElementById("aboutButton")
+    let home = document.getElementById("homeButton")
+    let projects = document.getElementById("projectsButton")
+
+    if (lang === "de") {
+        about.textContent = "Über Mich"
+        home.textContent = "Startseite"
+        projects.textContent = "Projekte"
+    } else {
+        about.textContent = "About Me"
+        home.textContent = "Home"
+        projects.textContent = "Projects"
     }
 }

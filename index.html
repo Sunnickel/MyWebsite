@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <title>Home - Alexander Reiter</title>
@@ -15,16 +15,16 @@
     </header>
     <nav>
         <div id="navigation">
-            <button onclick="location.href = 'about.html';" class="navList">About Me</button>
-            <button onclick="location.href = 'index.html';" class="navList" disabled>Home</button>
-            <button onclick="location.href = 'projects.html';" class="navList">Projects</button>
+            <button onclick="location.href = 'about.html';" class="navList" id="aboutButton">About Me</button>
+            <button onclick="location.href = 'index.html';" class="navList" disabled id="homeButton">Home</button>
+            <button onclick="location.href = 'projects.html';" class="navList" id="projectsButton">Projects</button>
         </div>
     </nav>
 
     <div id="grid-wrapper">
         <div id="content">
             <iframe
-              src="https://player.twitch.tv/?channel=phil_nash&parent=www.alexander-reiter.at&autoplay=false"
+              src="https://player.twitch.tv/?channel=sunnickel&parent=www.alexander-reiter.at&autoplay=false"
               allowfullscreen
               height="100%"
               width="100%"
@@ -44,11 +44,16 @@
     </div>
 
     <div id="footer">
+        <div></div>
         <a href="https://github.com/Sunnickel">- My GitHub -</a>
         <a href="https://twitch.com/Sunnickel">- My Twitch -</a>
         <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander Reiter,  </a>
         <a href="https://www.tiktok.com/@sunnickel">- My TikTok -</a>
         <a href="https://www.instagram.com/sunnickel/">- My Insta -</a>
+        <div>
+            <img src="assets/pictures/moon.svg" alt="Change Theme" width="40" onclick="changeTheme()" id="changeTheme">
+            <img src="assets/pictures/english.svg" alt="Change Theme" width="40" onclick="changeLanguage()" id="changeLanguage">
+        </div>
     </div>
 </body>
 </html>
