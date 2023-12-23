@@ -71,7 +71,7 @@ async function projects() {
 
 function changeTheme() {
     let img = document.getElementById("changeTheme")
-    let picture = ""
+    let picture;
 
     if (localStorage.getItem("theme") === "light") {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -88,38 +88,38 @@ function changeTheme() {
 }
 
 async function changeLanguage() {
-    let img = document.getElementById("changeLanguage")
-    let picture = "";
-
     if (localStorage.getItem("lang") === "de") {
-        picture = "english.svg"
         document.documentElement.setAttribute('lang', 'en');
         localStorage.setItem("lang", "en")
     } else {
-        picture = "german.svg"
         document.documentElement.setAttribute('lang', 'de');
         localStorage.setItem("lang", "de")
     }
-
     await loadLang()
-    img.src = "assets/pictures/" + picture
 }
 
 
 async function loadLang() {
     let lang = localStorage.getItem("lang")
 
+    let img = document.getElementById("changeLanguage")
+    let picture;
+
     let about = document.getElementById("aboutButton")
     let home = document.getElementById("homeButton")
     let projects = document.getElementById("projectsButton")
 
     if (lang === "de") {
+        picture = "german.svg"
         about.textContent = "Über Mich"
         home.textContent = "Startseite"
         projects.textContent = "Projekte"
     } else {
+        picture = "english.svg"
         about.textContent = "About Me"
         home.textContent = "Home"
         projects.textContent = "Projects"
     }
+
+    img.src = "assets/pictures/" + picture
 }
