@@ -8,50 +8,67 @@
 header {
     font-size: xx-large;
     font-weight: bold;
-
+    text-decoration: underline;
     color: #C0DA74;
-
-
 }
 
 /*Navigation*/
-.navList:disabled:hover, .navList:disabled {
-    color: #747572;
-
-    border: 2px solid #747572;
-}
-
-.navList:hover {
+.navList:hover:not([disabled]) {
     font-weight: bold;
-
     border: 2px solid #FCF7FF;
-    border-radius: 15px;
 }
 
 .navList {
     color: #fcf7ff;
     font-weight: bold;
-
     border: 2px solid #747572;
     border-radius: 15px;
 }
 
 /*Content*/
-#content {
+#grid-wrapper {
+    color: #fcf7ff;
+}
+
+#twitch-embed {
+    border: 2px solid #747572;
+    border-radius: 15px;
+}
+
+.template-entry {
+    border: 2px solid #747572;
+    border-radius: 15px;
+}
+
+.template-entry:hover {
+    border: 2px solid #FCF7FF;
+}
+
+.repo {
+    color: #FCF7FF;
+    border: 2px solid #747572;
+    border-radius: 15px;
+}
+
+.repo a {
+    color: #F4E87C;
+    text-decoration: none;
+}
+
+.repo a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
 }
 
 /*Footer*/
-footer a {
+
+#footer a {
     color: #F4E87C;
     text-decoration: none;
-
-    position: sticky;
-    bottom: 0;
-    padding: 1em;
 }
 
 
-a:hover {
+#footer a:hover {
     text-decoration: underline;
     text-decoration-thickness: 3px;
 }

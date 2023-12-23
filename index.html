@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Startseite - Alexander Reiter</title>
+    <title>Home - Alexander Reiter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/layout.css" rel="stylesheet">
     <link href="assets/css/design.css" rel="stylesheet">
+
+    <script src="assets/javascript/standard.js" defer></script>
 </head>
-<body>
+<body id="body">
     <header>
-        <h1 id="title"> Alexander Reiter </h1>
+        <h1> Alexander Reiter </h1>
     </header>
     <nav>
         <div id="navigation">
@@ -18,17 +21,34 @@
         </div>
     </nav>
 
-    <div id="content">
+    <div id="grid-wrapper">
+        <div id="content">
+            <iframe
+              src="https://player.twitch.tv/?channel=phil_nash&parent=www.alexander-reiter.at&autoplay=false"
+              allowfullscreen
+              height="100%"
+              width="100%"
+              id="twitch-embed">
+            </iframe>
+            <div class="template-entry">
+                <h3 class="entry">Test-Titel</h3>
+                <div class="entry">
+                    Flavor each side of the noodles with one container of truffles.
+                    <img src="assets/pictures/arrow.svg" width="16px" alt=" > ">
+                </div>
+            </div>
 
+
+
+        </div>
     </div>
 
-    <footer>
-        <!--TODO: Add JavaScript to change Year of Copyright-->
-        <a href="https://github.com/Sunnickel">My GitHub</a>
-        <a href="https://twitch.com/Sunnickel">My Twitch</a>
-        <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file">© Alexander Reiter, 2023</a>
-        <a href="https://www.tiktok.com/@sunnickel">My TikTok</a>
-        <a href="https://www.instagram.com/sunnickel/">My Insta</a>
-    </footer>
+    <div id="footer">
+        <a href="https://github.com/Sunnickel">- My GitHub -</a>
+        <a href="https://twitch.com/Sunnickel">- My Twitch -</a>
+        <a href="https://github.com/Sunnickel/MyWebsite/tree/master?tab=BSD-3-Clause-1-ov-file" id="copyright">- © Alexander Reiter,  </a>
+        <a href="https://www.tiktok.com/@sunnickel">- My TikTok -</a>
+        <a href="https://www.instagram.com/sunnickel/">- My Insta -</a>
+    </div>
 </body>
 </html>
