@@ -4,7 +4,9 @@ async function getFile() {
     copyrightYear()
 
     await document.documentElement.setAttribute('data-theme', localStorage.getItem("theme"));
-    await document.documentElement.setAttribute('lang', 'de');
+    await document.documentElement.setAttribute('lang', localStorage.getItem("lang"));
+
+    await loadLang()
 
     let file = window.location.pathname
     let page = file.split("/").pop();
