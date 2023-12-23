@@ -110,7 +110,8 @@ async function loadLang() {
     let home = document.getElementById("homeButton")
     let projects = document.getElementById("projectsButton")
 
-    let dicspoker
+    let dicepoker_h3 = document.getElementById("dicepoker-h3")
+    let dicepoker_desc = document.getElementById("dicepoker-desc")
 
     let githubLink = document.getElementById("githubLink")
     let twitchLink = document.getElementById("twitchLink")
@@ -124,6 +125,8 @@ async function loadLang() {
         home.textContent = "Startseite"
         projects.textContent = "Projekte"
 
+        dicepoker_h3.textContent = "Würfelpoker"
+        dicepoker_desc.textContent = "Ein einfaches Würfelpoker Spiel (Noch nicht fertig)"
 
         githubLink.textContent = "- Mein Github -"
         twitchLink.textContent = "- Mein Twitch -"
@@ -135,6 +138,9 @@ async function loadLang() {
         about.textContent = "About Me"
         home.textContent = "Home"
         projects.textContent = "Projects"
+
+        dicepoker_h3.textContent = "Dice Poker"
+        dicepoker_desc.textContent = "A game of dice poker (Not finished yet)"
 
         githubLink.textContent = "- My Github -"
         twitchLink.textContent = "- My Twitch -"
