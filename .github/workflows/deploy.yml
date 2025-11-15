@@ -60,10 +60,10 @@ jobs:
                     ssh $SERVER_USER@$SERVER_HOST "sudo nginx -t && sudo systemctl reload nginx"
                     echo "Nginx reloaded successfully!"
 
-                    -   name: Verify deployment
-                        env:
-                            SERVER_USER: ${{ secrets.SERVER_USER }}
-                            SERVER_HOST: ${{ secrets.SERVER_HOST }}
-                            DEPLOY_PATH: ${{ secrets.SERVER_PATH }}
-                        run: |
-                            ssh $SERVER_USER@$SERVER_HOST "ls -lah $SERVER_PATH"
+            -   name: Verify deployment
+                env:
+                    SERVER_USER: ${{ secrets.SERVER_USER }}
+                    SERVER_HOST: ${{ secrets.SERVER_HOST }}
+                    DEPLOY_PATH: ${{ secrets.SERVER_PATH }}
+                run: |
+                    ssh $SERVER_USER@$SERVER_HOST "ls -lah $SERVER_PATH"
