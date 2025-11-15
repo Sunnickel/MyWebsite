@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular app
-        run: npm run build -- --prod --output-path=dist
+        run: ng build --configuration production --output-path=dist
 
       - name: Deploy to server
         uses: appleboy/ssh-action@v0.1.7
