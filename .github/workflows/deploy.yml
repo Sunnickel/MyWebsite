@@ -16,32 +16,54 @@ jobs:
             -   name: Setup Node.js
                 uses: actions/setup-node@v6
                 with:
+                    node-version: '20'
                     cache: 'npm'
 
             -   name: Install dependencies
                 run: npm ci
 
-            -   name: Install Angular CLI
-                run: npm install -g @angular/cli
-
             -   name: Build Angular app
-                run: ng build --configuration production --output-path=dist
+                run: npm run build -- --configuration production
+
+            -   name: Add SSH private key to agent
+                uses: webfactory/ssh-agent@v0.9.0
+                with:
+                    ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+            -   name: Add server to known hosts
+                run: |
+                    mkdir -p ~/.ssh
+                    ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
             -   name: Deploy to Server
-                uses: easingthemes/ssh-deploy@v5.1.0
-                with:
-                    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-                    SOURCE: "dist/"
-                    REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-                    REMOTE_USER: ${{ secrets.REMOTE_USER }}
-                    TARGET: ${{ secrets.REMOTE_TARGET }}
-                    EXCLUDE: "/dist/, /node_modules/"
-                    SCRIPT_BEFORE: |
-                        if [ -d "${{ secrets.REMOTE_TARGET }}/dist" ]; then
-                          mv ${{ secrets.REMOTE_TARGET }}/dist ${{ secrets.REMOTE_TARGET }}/dist_backup_$(date +%Y%m%d%H%M%S)
-                          echo "Backup of old dist folder created"
-                        fi
-                    SCRIPT_AFTER: |
-                        sudo systemctl reload nginx
-                        echo "Nginx reloaded"
+                env:
+                    SERVER_USER: ${{ secrets.SERVER_USER }}
+                    SERVER_HOST: ${{ secrets.SERVER_HOST }}
+                    DEPLOY_PATH: ${{ secrets.SERVER_PATH }}
+                run: |
 
+                    # Sync built files to server (excluding node_modules and source files)
+                    rsync -avz --delete \
+                      --exclude 'node_modules' \
+                      --exclude '.git' \
+                      --exclude 'src' \
+                      --exclude '.angular' \
+                      dist/my-website/browser/ $SERVER_USER@$SERVER_HOST:$DEPLOY_PATH/
+
+                    echo "Deployment completed successfully!"
+
+            -   name: Reload Nginx
+                env:
+                    SERVER_USER: ${{ secrets.SERVER_USER }}
+                    SERVER_HOST: ${{ secrets.SERVER_HOST }}
+                run: |
+                    ssh $SERVER_USER@$SERVER_HOST "sudo nginx -t && sudo systemctl reload nginx"
+                    echo "Nginx reloaded successfully!"
+
+                    -   name: Verify deployment
+                        env:
+                            SERVER_USER: ${{ secrets.SERVER_USER }}
+                            SERVER_HOST: ${{ secrets.SERVER_HOST }}
+                            DEPLOY_PATH: ${{ secrets.SERVER_PATH }}
+                        run: |
+                            ssh $SERVER_USER@$SERVER_HOST "ls -lah $SERVER_PATH"
