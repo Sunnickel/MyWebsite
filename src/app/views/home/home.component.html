@@ -1,237 +1,160 @@
-<div appSnapScroll class="min-h-screen bg-background overflow-y-hidden">
-	<!-- Hero Section with Gradient Background -->
-	<section class="relative min-h-screen flex items-center snap-y snap-start" id="start">
-		<div
-			class="absolute top-10 left-128 w-72 h-72 bg-primary/10 rounded-full blur-3xl float-animation pointer-events-none"></div>
-		<div
-			class="absolute top-2/4 right-96 w-96 h-96 bg-secondary/10 rounded-full blur-3xl float-animation pointer-events-none "
-			style="animation-delay: 2s;"></div>
-		<div class="container mx-auto px-4 py-20 relative z-10">
-			<div class="max-w-4xl">
-				<h1 class=" text-6xl md:text-7xl lg:text-8xl font-bold mb-3 mt-3
-					  bg-gradient-to-r from-primary via-secondary to-accent
-					  bg-clip-text text-transparent">
-					Hi, I'm Sunnickel!
-				</h1>
+<div class="min-h-svh bg-background">
+	<main>
+		<!-- Hero -->
+		<section class="relative min-h-svh flex items-center snap-start" id="start">
+			<div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+				<div class="absolute top-10 left-128 w-72 h-72 bg-primary/10 rounded-full blur-3xl float-animation"></div>
+				<div class="absolute top-2/4 right-96 w-96 h-96 bg-secondary/10 rounded-full blur-3xl float-animation [animation-delay:2s]!"></div>
+			</div>
 
-				<p class="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
-					A passionate student exploring the world of technology
-				</p>
+			<div class="container mx-auto px-4 py-20 relative z-10">
+				<div class="max-w-4xl">
+					<h1 class="text-6xl md:text-7xl lg:text-8xl font-bold mb-3 mt-3
+						  bg-gradient-to-r from-primary via-secondary to-accent
+						  bg-clip-text text-transparent">
+						Hi, I'm Sunnickel!
+					</h1>
 
-				<p class="text-lg text-muted-foreground/70 mb-12 max-w-2xl">
-					I build websites, create scripts, experiment with games, and dive deep into backend development.
-					Always
-					learning, always building.
-				</p>
+					<p class="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
+						A passionate student exploring the world of technology
+					</p>
 
-				<div class="flex gap-4 flex-wrap mb-12">
-					<div>
+					<p class="text-lg text-muted-foreground/70 mb-12 max-w-2xl">
+						I build websites, create scripts, experiment with games, and dive deep into backend
+						development. Always learning, always building.
+					</p>
+
+					<div class="flex gap-4 flex-wrap mb-12">
 						<a
 							class="group relative inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-600 hover:to-secondary-600 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-primary/50"
 							href="#about">
 							<span>About me</span>
-							<svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
-								 stroke="currentColor"
-								 viewBox="0 0 24 24">
+							<svg aria-hidden="true" class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+								 stroke="currentColor" viewBox="0 0 24 24">
 								<path d="M13 7l5 5m0 0l-5 5m5-5H6" stroke-linecap="round" stroke-linejoin="round"
 									  stroke-width="2"/>
 							</svg>
 						</a>
-						<em class="text-sm  text-center"> </em>
 					</div>
 
-					<div class="flex flex-col">
-						<a class="inline-flex items-center gap-2 bg-muted/50 hover:bg-muted backdrop-blur-sm border border-muted text-foreground px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105">
-							<span>Read My Blog</span>
+					<!-- Social Links -->
+					<div class="flex gap-6">
+						<a aria-label="GitHub"
+						   class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
+						   href="https://github.com/Sunnickel" rel="noopener noreferrer" target="_blank">
+							<ng-icon color="#ffffff" name="phosphorGithubLogo" size="24"></ng-icon>
 						</a>
-						<em class="text-sm text-destructive text-center"> Coming soon! </em>
+						<a aria-label="Twitch"
+						   class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
+						   href="https://www.twitch.tv/sunnickel" rel="noopener noreferrer" target="_blank">
+							<ng-icon color="#ffffff" name="phosphorTwitchLogo" size="24"></ng-icon>
+						</a>
+						<a aria-label="Email"
+						   class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
+						   href="mailto:contact@alexander-reiter.at">
+							<ng-icon color="#ffffff" name="phosphorMailbox" size="24"></ng-icon>
+						</a>
 					</div>
-				</div>
-
-				<!-- Social Links -->
-				<div class="flex gap-6">
-					<a
-						class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
-						href="https://github.com/Sunnickel" rel="noopener noreferrer"
-						target="_blank">
-						<ng-icon
-							name="phosphorGithubLogo"
-							size="24"
-							color="#ffffff"
-						></ng-icon>
-					</a>
-					<a
-						class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
-						href="https://www.twitch.tv/sunnickel" rel="noopener noreferrer"
-						target="_blank">
-						<ng-icon
-							name="phosphorTwitchLogo"
-							size="24"
-							color="#ffffff"
-						></ng-icon>
-					</a>
-					<a
-						class="group flex items-center justify-center w-12 h-12 rounded-lg bg-muted/50 hover:bg-muted border border-muted hover:border-muted-foreground/30 transition-all transform hover:scale-110"
-						href="mailto:contact@alexander-reiter.at" rel="noopener noreferrer"
-						target="_blank">
-						<ng-icon
-							name="phosphorMailbox"
-							size="24"
-							color="#ffffff"
-						></ng-icon>
-					</a>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<!-- About Section -->
-	<section class="pt-32 relative min-h-screen snap-always snap-y snap-start" id="about">
-		<div
-			class="absolute bottom-256 left-96 w-80 h-80 bg-accent/10 rounded-full blur-3xl float-animation pointer-events-none"
-			style="animation-delay: 4s;"></div>
-		<div
-			class="absolute bottom-30 right-150 w-96 h-96 bg-primary/10 rounded-full blur-3xl float-animation pointer-events-none"
-			style="animation-delay: 1s;"></div>
-		<div class="container mx-auto px-4 z-10">
-			<div class="max-w-4xl mx-auto">
-				<h2
-					class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-					About Me
-				</h2>
+		<!-- About -->
+		<section class="relative min-h-svh pt-32 pb-20 snap-start" id="about">
+			<div aria-hidden="true" class="absolute inset-0 overflow-hidden pointer-events-none">
+				<div class="absolute bottom-256 left-96 w-80 h-80 bg-accent/10 rounded-full blur-3xl float-animation [animation-delay:4s]!"></div>
+				<div class="absolute bottom-30 right-150 w-96 h-96 bg-primary/10 rounded-full blur-3xl float-animation [animation-delay:1s]!"></div>
+			</div>
 
-				<div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
-					<p>
-						I'm a student with a passion for creating applications. Even though I know how to do some
-						frontend, my
-						passion lies in the <span class="text-secondary font-semibold">backend</span>.
-					</p>
+			<div class="container mx-auto px-4 relative z-10">
+				<div class="max-w-4xl mx-auto">
+					<h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+						About Me
+					</h2>
 
-					<p>
-						From creating <span class="text-primary font-semibold">pipelines for data</span> to CRUD
-						operations or
-						algorithms, I love architecting robust systems that power great experiences. Using docker for
-						deployment
-						and Kubernetes for better scalability.
-					</p>
+					<div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
+						<p>
+							I'm a student with a passion for creating applications. Even though I know how to do some
+							frontend, my passion lies in the <span class="text-secondary font-semibold">backend</span>.
+						</p>
 
-					<p>
-						Another field where my enthusiasm lies is <span class="text-accent font-semibold">gaming and game development</span>.
-						I've worked with Unity before, tried my hand at 3D modelling and managing & writing game
-						servers.
-					</p>
-				</div>
+						<p>
+							From creating <span class="text-primary font-semibold">pipelines for data</span> to CRUD
+							operations or algorithms, I love architecting robust systems that power great experiences.
+							Using docker for deployment and Kubernetes for better scalability.
+						</p>
 
-				<!-- Skills Grid -->
-				<div class="grid grid-cols-2 md:grid-cols-6 gap-4 mb-12 mt-12">
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-javascript">
-							<ng-icon
-								name="hugeJavaScript"
-								size="24"
-								color="javascript"
-							></ng-icon>
-							<div>
-								JavaScript
+						<p>
+							Another field where my enthusiasm lies is
+							<span class="text-accent font-semibold">gaming and game development</span>.
+							I've worked with Unity before, tried my hand at 3D modelling and managing &amp; writing
+							game servers.
+						</p>
+					</div>
+
+					<!-- Skills Grid -->
+					<div class="grid grid-cols-2 md:grid-cols-6 gap-4 mb-12 mt-12">
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-javascript">
+								<ng-icon color="javascript" name="hugeJavaScript" size="24"></ng-icon>
+								<div>JavaScript</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>Angular</li>
 								<li>Next.js</li>
 								<li>React</li>
 								<li>Express</li>
 							</ul>
 						</div>
-					</div>
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-java">
-							<ng-icon
-								name="hugeJava"
-								size="24"
-								color="java"
-							></ng-icon>
-							<div>
-								Java
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-java">
+								<ng-icon color="java" name="hugeJava" size="24"></ng-icon>
+								<div>Java</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>JavaFX</li>
 							</ul>
 						</div>
-					</div>
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-python">
-							<ng-icon
-								name="simplePython"
-								size="24"
-								color="python"
-							></ng-icon>
-							<div>
-								Python
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-python">
+								<ng-icon color="python" name="simplePython" size="24"></ng-icon>
+								<div>Python</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>Fastapi</li>
 								<li>SQLAlchemy</li>
 								<li>Flask</li>
 								<li>Scripting</li>
 							</ul>
 						</div>
-					</div>
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-rust">
-							<ng-icon
-								name="simpleRust"
-								size="24"
-								color="rust"
-							></ng-icon>
-							<div>
-								Rust
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-rust">
+								<ng-icon color="rust" name="simpleRust" size="24"></ng-icon>
+								<div>Rust</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>Axum</li>
 								<li>Bevy ECS</li>
 								<li>Tauri</li>
 							</ul>
 						</div>
-					</div>
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-csharp">
-							<ng-icon
-								name="phosphorFileCSharp"
-								size="24"
-								color="csharp"
-							></ng-icon>
-							<div>
-								.Net
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-csharp">
+								<ng-icon color="csharp" name="phosphorFileCSharp" size="24"></ng-icon>
+								<div>.Net</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>Unity (C#)</li>
 								<li>Powershell</li>
 								<li>VBA</li>
 							</ul>
 						</div>
-					</div>
-					<div class="text-muted-foreground">
-						<div class="flex gap-2 text-database">
-							<ng-icon
-								name="phosphorDatabase"
-								size="24"
-								color="database"
-							></ng-icon>
-							<div>
-								Database
+						<div class="text-muted-foreground">
+							<div class="flex gap-2 text-database">
+								<ng-icon color="database" name="phosphorDatabase" size="24"></ng-icon>
+								<div>Database</div>
 							</div>
-						</div>
-						<div>
-							<ul class="">
+							<ul>
 								<li>MySQL</li>
 								<li>MariaDB</li>
 								<li>SQLite</li>
@@ -239,57 +162,100 @@
 							</ul>
 						</div>
 					</div>
-				</div>
 
-				<div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
-					<div>
-						<h2>What I Build With These</h2>
-						<p>
-							I create backend systems and APIs, data processing pipelines, real-time chat applications,
-							and
-							game servers. My projects emphasize scalability through Docker and Kubernetes, clean
-							architecture, and robust data handling. I've also explored game development with Unity and
-							3D
-							modelling.
-						</p>
-						<br>
-						<h2>Examples</h2>
-						<div class="grid grid-cols-2">
-							<div class="row-start-1 col-start-1 text-left">
-								<h3> SunWeb </h3>
-								<div>
-									A crate built in rust to easily build web-applications.
-									It supports middleware, multidomains, static-serving and more.
-									<br>
-									<a class="text-cyan-400 hover:text-primary transition delay-75"
-									   href="https://github.com/Sunnickel/SunWeb" target="_blank"> Github </a>
+					<div class="space-y-6 text-lg text-muted-foreground leading-relaxed">
+						<div>
+							<h2>What I Build With These</h2>
+							<p>
+								I create backend systems and APIs, data processing pipelines, real-time chat
+								applications, and game servers. My projects emphasize scalability through Docker and
+								Kubernetes, clean architecture, and robust data handling. I've also explored game
+								development with Unity and 3D modelling.
+							</p>
+							<br>
+							<h2>Examples</h2>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+								<div class="md:row-start-1 md:col-start-1 text-left">
+									<h3>SunWeb</h3>
+									<div>
+										A crate built in rust to easily build web-applications.
+										It supports middleware, multidomains, static-serving and more.
+										<br>
+										<a class="text-cyan-400 hover:text-primary transition delay-75"
+										   href="https://github.com/Sunnickel/SunWeb" rel="noopener noreferrer"
+										   target="_blank">Github</a>
+									</div>
 								</div>
-							</div>
-							<div class="row-start-2 col-start-2 text-right">
-								<h3> This Website </h3>
-								This website is built on Angular JS. It has 3 sites, this page and 2 legal important
-								ones.
-								It uses Tailwind the css.
-								<br>
-								<a class="text-cyan-400 hover:text-primary transition delay-75"
-								   href="https://github.com/Sunnickel/MyWebsite" target="_blank"> Github </a>
+								<div class="md:row-start-2 md:col-start-2 md:text-right">
+									<h3>This Website</h3>
+									<div>
+										This website is built with Angular and styled with Tailwind CSS. Besides this
+										page there are three legal pages: privacy policy, terms of service and imprint.
+										<br>
+										<a class="text-cyan-400 hover:text-primary transition delay-75"
+										   href="https://github.com/Sunnickel/MyWebsite" rel="noopener noreferrer"
+										   target="_blank">Github</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+	</main>
 
+	<!-- Footer -->
+	<footer class="relative snap-end border-t border-muted bg-background">
+		<div class="container mx-auto px-4 py-12">
+			<div class="grid gap-10 md:grid-cols-4">
+				<div class="md:col-span-2">
+					<p class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+						Sunnickel
+					</p>
+					<p class="mt-3 max-w-sm text-muted-foreground">
+						Student, backend developer and game tinkerer. Always learning, always building.
+					</p>
+				</div>
+
+				<nav aria-label="Page sections">
+					<h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">Explore</h2>
+					<ul class="space-y-2 text-muted-foreground">
+						<li><a class="hover:text-primary transition delay-75" href="#start">Start</a></li>
+						<li><a class="hover:text-primary transition delay-75" href="#about">About me</a></li>
+					</ul>
+				</nav>
+
+				<nav aria-label="Legal">
+					<h2 class="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">Legal</h2>
+					<ul class="space-y-2 text-muted-foreground">
+						<li><a class="hover:text-primary transition delay-75" routerLink="/imprint">Impressum</a></li>
+						<li><a class="hover:text-primary transition delay-75" routerLink="/privacy">Privacy Policy</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="mt-10 flex flex-col gap-4 border-t border-muted pt-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+				<p>&copy; {{ year }} Sunnickel. All rights reserved.</p>
+
+				<div class="flex gap-3">
+					<a aria-label="GitHub"
+					   class="flex items-center justify-center w-10 h-10 rounded-lg bg-muted/50 hover:bg-muted border border-muted transition-all"
+					   href="https://github.com/Sunnickel" rel="noopener noreferrer" target="_blank">
+						<ng-icon color="#ffffff" name="phosphorGithubLogo" size="20"></ng-icon>
+					</a>
+					<a aria-label="Twitch"
+					   class="flex items-center justify-center w-10 h-10 rounded-lg bg-muted/50 hover:bg-muted border border-muted transition-all"
+					   href="https://www.twitch.tv/sunnickel" rel="noopener noreferrer" target="_blank">
+						<ng-icon color="#ffffff" name="phosphorTwitchLogo" size="20"></ng-icon>
+					</a>
+					<a aria-label="Email"
+					   class="flex items-center justify-center w-10 h-10 rounded-lg bg-muted/50 hover:bg-muted border border-muted transition-all"
+					   href="mailto:contact@alexander-reiter.at">
+						<ng-icon color="#ffffff" name="phosphorMailbox" size="20"></ng-icon>
+					</a>
+				</div>
 			</div>
 		</div>
-
-		<footer
-			class="sticky top-full row-start-2 row-end-3 text-center p-4 text-muted-foreground bg-background border-t border-muted">
-			Sunnickel &copy; 2025
-			<br>
-			All rights reserved.
-			<div class="flex justify-center gap-5 mt-2">
-				<a class="hover:text-primary transition delay-75" routerLink="/privacy">Privacy Policy</a>
-				<a class="hover:text-primary transition delay-75" routerLink="/terms">Terms of Service</a>
-			</div>
-		</footer>
-	</section>
+	</footer>
 </div>
