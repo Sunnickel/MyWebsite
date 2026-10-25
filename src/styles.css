@@ -2,6 +2,18 @@
 @import "tailwindcss/preflight" layer(base);
 @import "tailwindcss/utilities" layer(utilities);
 
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+}
+
 /* =========================
    Theme Configuration
 ========================= */
@@ -313,4 +325,3 @@
 		0 0 40px oklch(0.65 0.26 345 / 0.2);
 	}
 }
-
