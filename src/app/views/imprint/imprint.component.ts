@@ -1,35 +1,45 @@
-import {Component} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {SnapScrollDirective} from '../../directives/snap-scroll.directive';
-import {NgIcon, provideIcons} from '@ng-icons/core';
 import {
-	phosphorDatabase,
-	phosphorFileCSharp,
-	phosphorGithubLogo,
-	phosphorMailbox,
-	phosphorTwitchLogo
+    Component
+} from '@angular/core';
+import {
+    RouterLink
+} from '@angular/router';
+import {
+    provideIcons
+} from '@ng-icons/core';
+import {
+    phosphorDatabase,
+    phosphorFileCSharp,
+    phosphorGithubLogo,
+    phosphorMailbox,
+    phosphorTwitchLogo
 } from '@ng-icons/phosphor-icons/regular';
-import {hugeJava, hugeJavaScript} from '@ng-icons/huge-icons';
-import {simplePython, simpleRust} from '@ng-icons/simple-icons';
+import {
+    hugeJava,
+    hugeJavaScript
+} from '@ng-icons/huge-icons';
+import {
+    simplePython,
+    simpleRust
+} from '@ng-icons/simple-icons';
 
 @Component({
-	selector: 'app-imprint',
-	imports: [RouterLink, SnapScrollDirective, NgIcon],
-	templateUrl: './imprint.component.html',
-	styleUrls: ['./imprint.component.css'],
-	viewProviders: [
-		provideIcons({
-			phosphorGithubLogo,
-			phosphorTwitchLogo,
-			phosphorMailbox,
-			hugeJavaScript,
-			hugeJava,
-			simplePython,
-			simpleRust,
-			phosphorFileCSharp,
-			phosphorDatabase
-		})
-	]
+    selector: 'app-imprint',
+    imports: [RouterLink],
+    templateUrl: './imprint.component.html',
+    styleUrls: ['./imprint.component.css'],
+    viewProviders: [
+        provideIcons({
+            phosphorGithubLogo,
+            phosphorTwitchLogo,
+            phosphorMailbox,
+            hugeJavaScript,
+            hugeJava,
+            simplePython,
+            simpleRust,
+            phosphorFileCSharp,
+            phosphorDatabase
+        })
+    ]
 })
-export class ImprintComponent {
-}
+export class ImprintComponent {}
